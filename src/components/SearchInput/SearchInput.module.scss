@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.container {
+	position: relative;
+}
+
+.searchIcon {
+	position: absolute;
+	left: 10px;
+	top: 8px;
+}
+
+.searchInput {
+	height: 2.25rem;
+	background-color: transparent;
+	border: 2px solid $darkGray;
+	border-radius: 5px;
+	padding-left: 2rem;
+
+	&:focus {
+		outline: none;
+	}
+}

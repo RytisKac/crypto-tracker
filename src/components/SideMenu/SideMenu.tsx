@@ -8,7 +8,13 @@ const SideMenu = () => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.wrapper}>
-				<Image src={Logo} alt="Logo" width={30} height={30} />
+				<Image
+					src={Logo}
+					alt="Logo"
+					width={40}
+					height={40}
+					className={styles.logoIcon}
+				/>
 				<ul className={styles.menuList}>
 					<li>
 						<Image src={Bitcoin} alt="Bitcoin" width={30} height={30} />
