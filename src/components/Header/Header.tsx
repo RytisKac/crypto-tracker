@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Home from '../../assets/images/home.svg';
+import Bitcoin from '../Images/Bitcoin';
 import SearchInput from '../SearchInput/SearchInput';
 import styles from './Header.module.scss';
 

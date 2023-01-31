@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import Logo from '../../assets/images/bitcoin-btc-logo.svg';
-import Bitcoin from '../../assets/images/currency-bitcoin.svg';
+import Bitcoin from '../Images/Bitcoin';
 import styles from './SideMenu.module.scss';
 
 const SideMenu = () => {
@@ -17,13 +17,13 @@ const SideMenu = () => {
 				/>
 				<ul className={styles.menuList}>
 					<li>
-						<Image src={Bitcoin} alt="Bitcoin" width={30} height={30} />
+						<Bitcoin className={styles.menuIcon} />
 					</li>
 					<li>
-						<Image src={Bitcoin} alt="Bitcoin1" width={30} height={30} />
+						<Bitcoin className={styles.menuIcon} />
 					</li>
 					<li>
-						<Image src={Bitcoin} alt="Bitcoin2" width={30} height={30} />
+						<Bitcoin className={styles.menuIcon} />
 					</li>
 				</ul>
 			</div>
