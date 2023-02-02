@@ -1,17 +1,21 @@
 @import '../../styles/variables';
 
 .container {
+	display: none;
 	width: 100%;
 	min-height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+
+	@media (min-width: 992px) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .wrapper {
 	position: relative;
 	height: 90%;
-	width: 100%;
+	width: 90%;
 	max-width: 6rem;
 	margin: 0 auto;
 	display: flex;

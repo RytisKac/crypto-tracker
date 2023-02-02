@@ -1,4 +1,6 @@
 .container {
-	display: grid;
-	grid-template-columns: 8% 72% 20%;
+	@media (min-width: 992px) {
+		display: grid;
+		grid-template-columns: 8% 72% 20%;
+	}
 }

@@ -1,0 +1,27 @@
+.hamButton {
+	position: relative;
+	width: 30px;
+	height: (30px * 3) /4;
+	cursor: pointer;
+
+	b {
+		position: absolute;
+		left: 0;
+		width: 30px;
+		height: 3px;
+		background-color: #fff;
+		&:nth-child(1) {
+			top: 0;
+		}
+		&:nth-child(2) {
+			top: 50%;
+		}
+		&:nth-child(3) {
+			top: 100%;
+		}
+	}
+
+	@media (min-width: 992px) {
+		display: none;
+	}
+}
