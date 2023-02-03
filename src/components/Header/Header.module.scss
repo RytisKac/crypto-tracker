@@ -11,6 +11,7 @@
 
 	@media (min-width: 992px) {
 		padding: 0;
+		margin-right: 1rem;
 	}
 }
 
@@ -19,7 +20,10 @@
 		margin-right: 0.75rem;
 	}
 
-	span {
+	h3 {
+		display: inline;
 		vertical-align: super;
+		font-size: 1rem;
+		font-weight: 500;
 	}
 }

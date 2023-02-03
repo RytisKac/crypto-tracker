@@ -13,7 +13,7 @@ const Header = (props: Props) => {
 			<HamButton />
 			<div className={styles.pageName}>
 				<Image src={Home} alt="Home" width={30} height={30} />
-				<span>Dashboard</span>
+				<h3>Dashboard</h3>
 			</div>
 			<div>
 				<SearchInput />

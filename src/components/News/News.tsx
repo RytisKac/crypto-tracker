@@ -15,16 +15,23 @@ interface Props {
 const News = ({ data }: Props) => {
 	return (
 		<div className={styles.container}>
-			{data.map((item) => {
-				return (
-					<NewsCard
-						key={item.title}
-						title={item.title}
-						excerpt={item.excerpt}
-						date={item.date}
-					/>
-				);
-			})}
+			<div className={styles.wrapper}>
+				<div className={styles.headerContainer}>
+					<h3>News</h3>
+				</div>
+				<div className={styles.newsList}>
+					{data.map((item) => {
+						return (
+							<NewsCard
+								key={item.title}
+								title={item.title}
+								excerpt={item.excerpt}
+								date={item.date}
+							/>
+						);
+					})}
+				</div>
+			</div>
 		</div>
 	);
 };

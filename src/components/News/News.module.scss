@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	min-height: 100vh;
+	border-left: 1px $darkGray solid;
+}
+
+.wrapper {
+	height: 100%;
+	margin: 0 auto;
+}
+
+.headerContainer {
+	width: 90%;
+	margin: 0 auto;
+	height: 6rem;
+	border-bottom: 1px $darkGray solid;
+	display: flex;
+	align-items: center;
+
+	h3 {
+		font-size: 1rem;
+		font-weight: 500;
+	}
+}
+
+.newsList {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
