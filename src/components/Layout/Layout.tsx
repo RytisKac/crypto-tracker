@@ -15,8 +15,8 @@ const Layout = ({ children }: Props) => {
 			<News
 				data={[
 					{
-						title: 'test news',
-						excerpt: 'this is text news article...',
+						title: 'This is a title',
+						excerpt: 'This is an excerpt of the the news article',
 						date: '2023-01-23',
 					},
 				]}

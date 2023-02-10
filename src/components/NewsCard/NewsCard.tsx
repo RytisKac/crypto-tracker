@@ -8,7 +8,13 @@ interface Props {
 }
 
 const NewsCard = ({ title, excerpt, date }: Props) => {
-	return <div className={styles.container}>NewsCard</div>;
+	return (
+		<div className={styles.container}>
+			<h3 className={styles.title}>{title}</h3>
+			<p className={styles.excerpt}>{excerpt}</p>
+			<p className={styles.date}>{date}</p>
+		</div>
+	);
 };
 
 export default NewsCard;
