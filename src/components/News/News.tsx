@@ -17,7 +17,7 @@ const News = ({ data }: Props) => {
 		<div className={styles.container}>
 			<div className={styles.wrapper}>
 				<div className={styles.headerContainer}>
-					<h3>News</h3>
+					<h3>Latest News</h3>
 				</div>
 				<div className={styles.newsList}>
 					{data.map((item) => {
