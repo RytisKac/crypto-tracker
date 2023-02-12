@@ -8,15 +8,12 @@
 		position: initial;
 		width: 100%;
 		min-height: 100vh;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 	}
 }
 
 .wrapper {
-	position: relative;
-	height: 90%;
+	position: fixed;
+	height: 90vh;
 	width: 90%;
 	max-width: 6rem;
 	margin: 0 auto;

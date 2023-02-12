@@ -1,0 +1,59 @@
+@import '../../styles/variables';
+
+.container {
+	border-radius: 10px;
+	min-height: 7rem;
+	padding-inline: 1rem;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	transition: all 0.1s;
+	&:hover {
+		background-color: $darkGray;
+	}
+}
+
+.logo {
+	margin-right: 1rem;
+}
+
+.name {
+	line-height: 1.5;
+	margin-right: 4rem;
+
+	span {
+		opacity: 0.6;
+	}
+}
+
+.price {
+	line-height: 1.5;
+	text-align: right;
+	margin-right: 10rem;
+	span {
+		color: $colorTextGreen;
+		text-align: right;
+	}
+}
+
+.priceChanges {
+	display: flex;
+	gap: 1rem;
+
+	div {
+		border-radius: 10px;
+		background-color: $darkGray;
+		padding: 1rem;
+		line-height: 1.5;
+		text-align: right;
+
+		h3 {
+			color: $colorTextGreen;
+		}
+
+		span {
+			font-size: 1rem;
+			opacity: 0.6;
+		}
+	}
+}
