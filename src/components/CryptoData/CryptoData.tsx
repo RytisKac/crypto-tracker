@@ -7,7 +7,7 @@ const CryptoData = ({ data }: Props) => {
 	return (
 		<div>
 			{data.map((item) => {
-				return <CryptoCard data={item} />;
+				return <CryptoCard key={item.symbol} data={item} />;
 			})}
 		</div>
 	);
