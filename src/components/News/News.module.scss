@@ -2,13 +2,14 @@
 
 .container {
 	display: none;
-	width: 100%;
-	margin: 0 auto;
-	min-height: 100vh;
 	border-left: 1px $darkGray solid;
 
 	@media (min-width: 992px) {
 		display: block;
+		position: fixed;
+		width: 20%;
+		height: 100%;
+		right: 0;
 	}
 }
 

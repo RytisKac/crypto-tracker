@@ -2,9 +2,11 @@
 	@media (min-width: 992px) {
 		display: grid;
 		grid-template-columns: 8% 72% 20%;
+		grid-template-rows: auto;
 	}
 }
 
 .content {
 	margin-right: 1rem;
+	grid-column: 2 / 3;
 }
