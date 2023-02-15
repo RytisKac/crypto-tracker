@@ -9,16 +9,18 @@ type Props = {};
 const CryptoCard = ({ data }: Props) => {
 	return (
 		<div className={styles.container}>
-			<div className={styles.logo}>
-				<Image src={Bitcoin} width={30} height={30} alt="bitcoin logo" />
-			</div>
-			<div className={styles.name}>
-				<h3>{data.name}</h3>
-				<span>{data.symbol.toUpperCase()}</span>
-			</div>
-			<div className={styles.price}>
-				<h3>{formatCurrency(data.current_price)}</h3>
-				<span>$659.67</span>
+			<div className={styles.cryptoInfo}>
+				<div className={styles.logo}>
+					<Image src={Bitcoin} width={30} height={30} alt="bitcoin logo" />
+				</div>
+				<div className={styles.name}>
+					<h3>{data.name}</h3>
+					<span>{data.symbol.toUpperCase()}</span>
+				</div>
+				<div className={styles.price}>
+					<h3>{formatCurrency(data.current_price)}</h3>
+					<span>$659.67</span>
+				</div>
 			</div>
 			<div className={styles.priceChanges}>
 				<div>

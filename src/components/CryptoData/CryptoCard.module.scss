@@ -6,11 +6,16 @@
 	padding-inline: 1rem;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	cursor: pointer;
 	transition: all 0.1s;
 	&:hover {
 		background-color: $darkGray;
 	}
+}
+
+.cryptoInfo {
+	display: flex;
 }
 
 .logo {
@@ -19,7 +24,7 @@
 
 .name {
 	line-height: 1.5;
-	margin-right: 4rem;
+	min-width: 10rem;
 
 	span {
 		opacity: 0.6;
@@ -29,7 +34,8 @@
 .price {
 	line-height: 1.5;
 	text-align: right;
-	margin-right: 10rem;
+	min-width: 5rem;
+
 	span {
 		color: $colorTextGreen;
 		text-align: right;
