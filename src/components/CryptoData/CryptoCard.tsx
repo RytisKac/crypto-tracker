@@ -2,13 +2,17 @@ import Image from 'next/image';
 import React from 'react';
 import styles from './CryptoCard.module.scss';
 import Bitcoin from '../../assets/images/bitcoin-btc-logo.svg';
-import { formatCurrency } from '@/utils/currencyFormatter';
+import { formatCurrency, formatPercentage } from '@/utils/formatter';
+import classNames from 'classnames';
 
 interface Props {
 	data: {
 		name: string;
 		symbol: string;
 		current_price: number;
+		price_change_percentage_1h_in_currency: number;
+		price_change_percentage_24h_in_currency: number;
+		price_change_percentage_7d_in_currency: number;
 	};
 }
 
@@ -30,15 +34,39 @@ const CryptoCard = ({ data }: Props) => {
 			</div>
 			<div className={styles.priceChanges}>
 				<div>
-					<h3>1.4%</h3>
+					<h3
+						className={classNames(
+							data.price_change_percentage_1h_in_currency > 0
+								? styles.positive
+								: styles.negative
+						)}
+					>
+						{formatPercentage(data.price_change_percentage_1h_in_currency)}
+					</h3>
 					<span>1h</span>
 				</div>
 				<div>
-					<h3>1.9%</h3>
+					<h3
+						className={classNames(
+							data.price_change_percentage_24h_in_currency > 0
+								? styles.positive
+								: styles.negative
+						)}
+					>
+						{formatPercentage(data.price_change_percentage_24h_in_currency)}
+					</h3>
 					<span>24h</span>
 				</div>
 				<div>
-					<h3>17.1%</h3>
+					<h3
+						className={classNames(
+							data.price_change_percentage_7d_in_currency > 0
+								? styles.positive
+								: styles.negative
+						)}
+					>
+						{formatPercentage(data.price_change_percentage_7d_in_currency)}
+					</h3>
 					<span>7 days</span>
 				</div>
 			</div>
