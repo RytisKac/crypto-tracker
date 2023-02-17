@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Bitcoinu = (props: any) => (
+const Bitcoin = (props: any) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		className="icon icon-tabler icon-tabler-currency-bitcoin"
@@ -19,4 +19,4 @@ const Bitcoinu = (props: any) => (
 	</svg>
 );
 
-export default Bitcoinu;
+export default Bitcoin;

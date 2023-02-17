@@ -9,7 +9,7 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 
 const Header = () => {
 	const [open, setOpen] = useState(false);
-	const isMobile = useMediaQuery('(max-width: 992px)');
+	const isMobile = useMediaQuery('(max-width: 1024px)');
 	return (
 		<div className={styles.container}>
 			{isMobile && (

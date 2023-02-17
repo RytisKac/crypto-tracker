@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import React from 'react';
 import Logo from '../../assets/images/bitcoin-btc-logo.svg';
+import Coin from '../Images/Coin';
+import Exchange from '../Images/Exchange';
 import Bitcoin from '../Images/Bitcoin';
 import styles from './SideMenu.module.scss';
+import Report from '../Images/Report';
 
 const SideMenu = () => {
 	return (
@@ -17,13 +20,13 @@ const SideMenu = () => {
 				/>
 				<ul className={styles.menuList}>
 					<li>
-						<Bitcoin className={styles.menuIcon} />
+						<Coin className={styles.menuIcon} />
 					</li>
 					<li>
-						<Bitcoin className={styles.menuIcon} />
+						<Exchange className={styles.menuIcon} />
 					</li>
 					<li>
-						<Bitcoin className={styles.menuIcon} />
+						<Report className={styles.menuIcon} />
 					</li>
 				</ul>
 			</div>

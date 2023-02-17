@@ -1,7 +1,7 @@
 .container {
-	@media (min-width: 992px) {
+	@media (min-width: 1024px) {
 		display: grid;
-		grid-template-columns: 8% 72% 20%;
+		grid-template-columns: 7% 73% 20%;
 		grid-template-rows: auto;
 	}
 }
