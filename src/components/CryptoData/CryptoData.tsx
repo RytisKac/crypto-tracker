@@ -1,7 +1,15 @@
 import React from 'react';
 import CryptoCard from './CryptoCard';
 
-type Props = {};
+interface Data {
+	name: string;
+	symbol: string;
+	current_price: number;
+}
+
+interface Props {
+	data: Data[];
+}
 
 const CryptoData = ({ data }: Props) => {
 	return (

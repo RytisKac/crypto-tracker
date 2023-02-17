@@ -4,7 +4,13 @@ import styles from './CryptoCard.module.scss';
 import Bitcoin from '../../assets/images/bitcoin-btc-logo.svg';
 import { formatCurrency } from '@/utils/currencyFormatter';
 
-type Props = {};
+interface Props {
+	data: {
+		name: string;
+		symbol: string;
+		current_price: number;
+	};
+}
 
 const CryptoCard = ({ data }: Props) => {
 	return (
