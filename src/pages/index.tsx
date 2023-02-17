@@ -1,16 +1,9 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { Inter } from '@next/font/google';
-import styles from '@/styles/Home.module.css';
 import CryptoData from '@/components/CryptoData/CryptoData';
+import { Data } from '@/utils/types';
 
 const inter = Inter({ subsets: ['latin'] });
-
-interface Data {
-	name: string;
-	symbol: string;
-	current_price: number;
-}
 
 interface Props {
 	data: Data[];

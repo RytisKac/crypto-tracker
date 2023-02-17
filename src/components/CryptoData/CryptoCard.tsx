@@ -4,16 +4,10 @@ import styles from './CryptoCard.module.scss';
 import Bitcoin from '../../assets/images/bitcoin-btc-logo.svg';
 import { formatCurrency, formatPercentage } from '@/utils/formatter';
 import classNames from 'classnames';
+import { Data } from '@/utils/types';
 
 interface Props {
-	data: {
-		name: string;
-		symbol: string;
-		current_price: number;
-		price_change_percentage_1h_in_currency: number;
-		price_change_percentage_24h_in_currency: number;
-		price_change_percentage_7d_in_currency: number;
-	};
+	data: Data;
 }
 
 const CryptoCard = ({ data }: Props) => {

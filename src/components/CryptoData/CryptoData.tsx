@@ -1,11 +1,6 @@
+import { Data } from '@/utils/types';
 import React from 'react';
 import CryptoCard from './CryptoCard';
-
-interface Data {
-	name: string;
-	symbol: string;
-	current_price: number;
-}
 
 interface Props {
 	data: Data[];

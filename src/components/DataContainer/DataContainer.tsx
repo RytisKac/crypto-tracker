@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from './DataContainer.module.scss';
 
 interface Props {
 	children: React.ReactNode;
