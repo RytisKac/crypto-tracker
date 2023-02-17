@@ -15,7 +15,7 @@ const CryptoCard = ({ data }: Props) => {
 		<div className={styles.container}>
 			<div className={styles.cryptoInfo}>
 				<div className={styles.logo}>
-					<Image src={Bitcoin} width={30} height={30} alt="bitcoin logo" />
+					<Image src={data.image} width={30} height={30} alt="bitcoin logo" />
 				</div>
 				<div className={styles.name}>
 					<h3>{data.name}</h3>
