@@ -1,6 +1,7 @@
 import { Data } from '@/utils/types';
 import React from 'react';
 import CryptoCard from './CryptoCard';
+import styles from './CryptoCard.module.scss';
 
 interface Props {
 	data: Data[];

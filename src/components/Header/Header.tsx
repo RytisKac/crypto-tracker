@@ -7,7 +7,11 @@ import SearchInput from '../SearchInput/SearchInput';
 import styles from './Header.module.scss';
 import useMediaQuery from '@/hooks/useMediaQuery';
 
-const Header = () => {
+interface Props {
+	title: string;
+}
+
+const Header = ({ title }: Props) => {
 	const [open, setOpen] = useState(false);
 	const isMobile = useMediaQuery('(max-width: 1024px)');
 	return (
@@ -20,7 +24,7 @@ const Header = () => {
 			)}
 			<div className={styles.pageName}>
 				<Image src={Home} alt="Home" width={30} height={30} />
-				<h3>Dashboard</h3>
+				<h3>{title}</h3>
 			</div>
 			<div>
 				<SearchInput />
