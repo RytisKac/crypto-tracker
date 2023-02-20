@@ -4,7 +4,6 @@ import Logo from '../../assets/images/bitcoin-btc-logo.svg';
 import Coin from '../Images/Coin';
 import Exchange from '../Images/Exchange';
 import styles from './SideMenu.module.scss';
-import Report from '../Images/Report';
 import Link from 'next/link';
 
 const SideMenu = () => {
@@ -27,11 +26,6 @@ const SideMenu = () => {
 					<li>
 						<Link href="/exchanges">
 							<Exchange className={styles.menuIcon} />
-						</Link>
-					</li>
-					<li>
-						<Link href="/companies">
-							<Report className={styles.menuIcon} />
 						</Link>
 					</li>
 				</ul>

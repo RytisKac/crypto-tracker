@@ -11,61 +11,38 @@ interface Props {
 const ExchangeCard = ({ exchange }: Props) => {
 	return (
 		<div className={styles.container}>
-			<div className={styles.cryptoInfo}>
-				<div className={styles.logo}>
-					<Image
-						src={exchange.image}
-						width={30}
-						height={30}
-						alt="bitcoin logo"
-					/>
+			<div className={styles.info}>
+				<div className={styles.top}>
+					<div className={styles.logo}>
+						<Image
+							src={exchange.image}
+							width={40}
+							height={40}
+							alt={`${exchange.name} logo`}
+						/>
+					</div>
+					<div className={styles.name}>
+						<h3>{exchange.name}</h3>
+						<span>{exchange.country}</span>
+					</div>
 				</div>
-				<div className={styles.name}>
-					<h3>{exchange.name}</h3>
-					<span>{exchange.country}</span>
+				<div className={styles.middle}>
+					<div className={styles.data}>
+						<h3>{formatCurrency(exchange.trade_volume_24h_btc)}</h3>
+						<span>Trade volume 24h</span>
+					</div>
 				</div>
-				<div className={styles.price}>
-					<h3>{formatCurrency(exchange.trade_volume_24h_btc)}</h3>
+				<div className={styles.bottom}>
+					<div className={styles.data}>
+						<h3>{exchange.trust_score}</h3>
+						<span>Trust score</span>
+					</div>
+					<div className={styles.data}>
+						<h3>{exchange.year_established}</h3>
+						<span>Est.</span>
+					</div>
 				</div>
 			</div>
-			{/* <div className={styles.priceChanges}>
-				<div>
-					<h3
-						className={classNames(
-							data.price_change_percentage_1h_in_currency > 0
-								? styles.positive
-								: styles.negative
-						)}
-					>
-						{formatPercentage(data.price_change_percentage_1h_in_currency)}
-					</h3>
-					<span>1h</span>
-				</div>
-				<div>
-					<h3
-						className={classNames(
-							data.price_change_percentage_24h_in_currency > 0
-								? styles.positive
-								: styles.negative
-						)}
-					>
-						{formatPercentage(data.price_change_percentage_24h_in_currency)}
-					</h3>
-					<span>24h</span>
-				</div>
-				<div>
-					<h3
-						className={classNames(
-							data.price_change_percentage_7d_in_currency > 0
-								? styles.positive
-								: styles.negative
-						)}
-					>
-						{formatPercentage(data.price_change_percentage_7d_in_currency)}
-					</h3>
-					<span>7 days</span>
-				</div>
-			</div> */}
 		</div>
 	);
 };
