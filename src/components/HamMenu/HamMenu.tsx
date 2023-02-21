@@ -1,8 +1,10 @@
 import classNames from 'classnames';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import Logo from '../../assets/images/bitcoin-btc-logo.svg';
-import Bitcoin from '../Images/Bitcoin';
+import Coin from '../Images/Coin';
+import Exchange from '../Images/Exchange';
 import styles from './HamMenu.module.scss';
 
 interface Props {
@@ -22,13 +24,14 @@ const HamMenu = ({ isOpen }: Props) => {
 				/>
 				<ul className={styles.menuList}>
 					<li>
-						<Bitcoin className={styles.menuIcon} />
+						<Link href="/">
+							<Coin className={styles.menuIcon} />
+						</Link>
 					</li>
 					<li>
-						<Bitcoin className={styles.menuIcon} />
-					</li>
-					<li>
-						<Bitcoin className={styles.menuIcon} />
+						<Link href="/exchanges">
+							<Exchange className={styles.menuIcon} />
+						</Link>
 					</li>
 				</ul>
 			</div>

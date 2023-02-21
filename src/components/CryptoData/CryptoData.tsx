@@ -9,7 +9,7 @@ interface Props {
 
 const CryptoData = ({ data }: Props) => {
 	return (
-		<div>
+		<div className={styles.itemsContainer}>
 			{data.map((item) => {
 				return <CryptoCard key={item.symbol} data={item} />;
 			})}

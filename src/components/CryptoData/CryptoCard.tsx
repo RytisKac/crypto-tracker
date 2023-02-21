@@ -23,7 +23,13 @@ const CryptoCard = ({ data }: Props) => {
 				</div>
 				<div className={styles.price}>
 					<h3>{formatCurrency(data.current_price)}</h3>
-					<span>$659.67</span>
+					<span
+						className={classNames(
+							data.price_change_24h > 0 ? styles.positive : styles.negative
+						)}
+					>
+						{formatCurrency(data.price_change_24h)}
+					</span>
 				</div>
 			</div>
 			<div className={styles.priceChanges}>

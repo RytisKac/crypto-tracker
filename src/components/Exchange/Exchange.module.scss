@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .itemsContainer {
-	margin-top: 1rem;
+	margin: 1rem;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 	gap: 2rem;
@@ -14,8 +14,10 @@
 	padding: 1rem;
 	cursor: pointer;
 	transition: all 0.1s;
-
-	background-color: $darkGray;
+	border: 1px solid $darkGray;
+	&:hover {
+		background-color: $darkGray;
+	}
 }
 
 .info {

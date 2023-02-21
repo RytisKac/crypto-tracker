@@ -5,6 +5,9 @@
 	justify-content: space-between;
 }
 
+.itemsContainer {
+	overflow-x: scroll;
+}
 .container {
 	border-radius: 10px;
 	min-height: 7rem;
@@ -12,10 +15,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: 3rem;
 	cursor: pointer;
 	transition: all 0.1s;
 	&:hover {
 		background-color: $darkGray;
+	}
+
+	@media (min-width: 1024px) {
+		gap: 0rem;
 	}
 }
 
@@ -43,7 +51,6 @@
 	min-width: 5rem;
 
 	span {
-		color: $colorTextGreen;
 		text-align: right;
 	}
 }
