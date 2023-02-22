@@ -24,3 +24,15 @@ export interface Exchange {
 	trade_volume_24h_btc: number;
 	trade_volume_24h_btc_normalized: number;
 }
+
+export interface CoinData {
+	id: string;
+	name: string;
+	symbol: string;
+	current_price: number;
+	image: {
+		small: string;
+		large: string;
+		thumb: string;
+	};
+}

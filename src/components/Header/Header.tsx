@@ -9,9 +9,10 @@ import useMediaQuery from '@/hooks/useMediaQuery';
 
 interface Props {
 	title: string;
+	image?: string;
 }
 
-const Header = ({ title }: Props) => {
+const Header = ({ title, image }: Props) => {
 	const [open, setOpen] = useState(false);
 	const isMobile = useMediaQuery('(max-width: 1024px)');
 	return (
@@ -23,7 +24,7 @@ const Header = ({ title }: Props) => {
 				</div>
 			)}
 			<div className={styles.pageName}>
-				<Image src={Home} alt="Home" width={30} height={30} />
+				<Image src={image ? image : Home} alt="Home" width={30} height={30} />
 				<h3>{title}</h3>
 			</div>
 			<div>
