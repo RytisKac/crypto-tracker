@@ -12,3 +12,7 @@ export function formatPercentage(amount: number) {
 		maximumFractionDigits: 1,
 	}).format(amount / 100);
 }
+
+export function formatNumber(amount: number) {
+	return new Intl.NumberFormat().format(amount);
+}

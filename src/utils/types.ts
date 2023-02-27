@@ -29,7 +29,26 @@ export interface CoinData {
 	id: string;
 	name: string;
 	symbol: string;
-	current_price: number;
+	market_data: {
+		current_price: {
+			usd: number;
+		};
+		market_cap: {
+			usd: number;
+		};
+		total_volume: {
+			usd: number;
+		};
+		high_24h: {
+			usd: number;
+		};
+		low_24h: {
+			usd: number;
+		};
+		price_change_24h: number;
+		total_supply: number;
+		circulating_supply: number;
+	};
 	image: {
 		small: string;
 		large: string;

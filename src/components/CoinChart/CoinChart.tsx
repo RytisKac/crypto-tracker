@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './CoinChart.module.scss';
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -35,6 +36,7 @@ interface Props {
 }
 
 const options = {
+	responsive: true,
 	plugins: {
 		legend: {
 			display: false,
@@ -49,18 +51,23 @@ const options = {
 			backgroundColor: 'rgba(47, 97, 68, 0.3)',
 		},
 		point: {
-			radius: 0,
-			hitRadius: 0,
+			radius: 5,
+			hitRadius: 10,
+			backgroundColor: 'rgba(47, 97, 68, 0.5)',
 		},
 	},
 	scales: {
 		xAxis: { display: false },
-		yAxis: { display: false },
+		yAxis: { display: true },
 	},
 };
 
-const Chart = ({ data }: Props) => {
-	return <Line data={data} width={100} height={40} options={options} />;
+const CoinChart = ({ data }: Props) => {
+	return (
+		<div className={styles.container}>
+			<Line data={data} options={options} />
+		</div>
+	);
 };
 
-export default Chart;
+export default CoinChart;
