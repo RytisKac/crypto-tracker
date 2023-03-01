@@ -1,15 +1,10 @@
+import { NewsData } from '@/utils/types';
 import React from 'react';
 import NewsCard from '../NewsCard/NewsCard';
 import styles from './News.module.scss';
 
-interface News {
-	title: string;
-	excerpt: string;
-	date: string;
-}
-
 interface Props {
-	data: News[];
+	data: NewsData[];
 }
 
 const News = ({ data }: Props) => {
@@ -23,10 +18,10 @@ const News = ({ data }: Props) => {
 					{data.map((item) => {
 						return (
 							<NewsCard
-								key={item.title}
+								key={item.id}
 								title={item.title}
-								excerpt={item.excerpt}
-								date={item.date}
+								excerpt={item.slug}
+								date={item.published_at}
 							/>
 						);
 					})}

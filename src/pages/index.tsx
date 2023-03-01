@@ -1,16 +1,18 @@
 import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import CryptoData from '@/components/CryptoData/CryptoData';
-import { Data } from '@/utils/types';
+import { Data, NewsData } from '@/utils/types';
 import Header from '@/components/Header/Header';
+import News from '@/components/News/News';
 
 const inter = Inter({ subsets: ['latin'] });
 
 interface Props {
 	data: Data[];
+	news: NewsData[]
 }
 
-export default function Home({ data }: Props) {
+export default function Home({ data, news }: Props) {
 	return (
 		<>
 			<Head>
@@ -21,34 +23,27 @@ export default function Home({ data }: Props) {
 			</Head>
 			<Header title="Coins" />
 			<CryptoData data={data} />
+			<News
+				data={news}
+			/>
 		</>
 	);
 }
 
 export async function getServerSideProps() {
-	const res = await fetch(
-		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d'
-	);
-	const data = await res.json();
+	const [coinsRes, newsRes] = await Promise.all([
+		fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=1h%2C24h%2C7d`),
+		fetch(
+			`https://cryptopanic.com/api/v1/posts/?auth_token=${process.env.CRYPTO_PANIC_API_KEY}`
+		),
+	]);
 
-	// const promises = datas.map(async (coin: Data) => {
-	// 	const chartRes = await fetch(
-	// 		`https://api.coingecko.com/api/v3/coins/${coin.id}/market_chart?vs_currency=usd&days=14&interval=daily`
-	// 	);
-	// 	const chartData = await chartRes.json();
-	// 	const formattedChartData = chartData.prices.map(([time, price]) => ({
-	// 		time,
-	// 		price,
-	// 	}));
-	// 	return {
-	// 		...coin,
-	// 		chartData: formattedChartData,
-	// 	};
-	// });
-
-	// const data = await Promise.all(promises);
+	const [coins, news] = await Promise.all([
+		coinsRes.json(),
+		newsRes.json(),
+	]);
 
 	return {
-		props: { data }, // will be passed to the page component as props
+		props: { data: coins, news: news.results }, // will be passed to the page component as props
 	};
 }

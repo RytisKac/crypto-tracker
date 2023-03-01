@@ -3,6 +3,8 @@
 .container {
 	display: none;
 	border-left: 1px $darkGray solid;
+	overflow-y: scroll;
+	scrollbar-width: none;
 
 	@media (min-width: 1024px) {
 		display: block;
@@ -10,6 +12,11 @@
 		width: 20%;
 		height: 100%;
 		right: 0;
+		top: 0;
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
 	}
 }
 
@@ -37,4 +44,5 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap: 1rem;
 }

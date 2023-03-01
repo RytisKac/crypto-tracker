@@ -55,3 +55,20 @@ export interface CoinData {
 		thumb: string;
 	};
 }
+
+export interface NewsData {
+	id: 17764763;
+	kind: string;
+	domain: string;
+	source: {
+		title: string;
+		region: string;
+		path: string | null;
+		domain: string;
+	};
+	title: string;
+	published_at: string;
+	slug: string;
+	url: string;
+	created_at: string;
+}

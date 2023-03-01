@@ -1,8 +1,9 @@
 import CoinChart from '@/components/CoinChart/CoinChart';
 import CoinHeader from '@/components/CoinHeader/CoinHeader';
 import Header from '@/components/Header/Header';
+import News from '@/components/News/News';
 import SingleCoinData from '@/components/SingleCoinData/SingleCoinData';
-import { CoinData } from '@/utils/types';
+import { CoinData, NewsData } from '@/utils/types';
 import Head from 'next/head';
 import React from 'react';
 
@@ -13,6 +14,7 @@ interface Data {
 interface Props {
 	coin: CoinData;
 	prices: { labels: String[]; datasets: Data[] };
+	news: NewsData[];
 }
 
 interface Params {
@@ -21,7 +23,7 @@ interface Params {
 	};
 }
 
-export default function Coin({ coin, prices }: Props) {
+export default function Coin({ coin, prices, news }: Props) {
 	return (
 		<>
 			<Head>
@@ -48,21 +50,28 @@ export default function Coin({ coin, prices }: Props) {
 					low24h: coin.market_data.low_24h.usd,
 				}}
 			/>
+			<News
+				data={news}
+			/>
 		</>
 	);
 }
 
 export async function getServerSideProps({ params }: Params) {
-	const [coinRes, marketChartRes] = await Promise.all([
+	const [coinRes, marketChartRes, newsRes] = await Promise.all([
 		fetch(`https://api.coingecko.com/api/v3/coins/${params.id}`),
 		fetch(
 			`https://api.coingecko.com/api/v3/coins/${params.id}/market_chart?vs_currency=usd&days=30&interval=daily`
 		),
+		fetch(
+			`https://cryptopanic.com/api/v1/posts/?auth_token=${process.env.CRYPTO_PANIC_API_KEY}`
+		),
 	]);
 
-	const [coin, marketChart] = await Promise.all([
+	const [coin, marketChart, news] = await Promise.all([
 		coinRes.json(),
 		marketChartRes.json(),
+		newsRes.json()
 	]);
 
 	interface Dataset {
@@ -85,5 +94,5 @@ export async function getServerSideProps({ params }: Params) {
 		datasets[0].data.push(price[1]);
 	});
 
-	return { props: { coin, prices: { labels, datasets } } };
+	return { props: { coin, prices: { labels, datasets }, news: news.results } };
 }
