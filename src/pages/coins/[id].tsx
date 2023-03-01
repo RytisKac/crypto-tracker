@@ -80,7 +80,7 @@ export async function getServerSideProps({ params }: Params) {
 
 	marketChart.prices.forEach((price: [number, number]) => {
 		labels.push(
-			new Date(price[0]).toLocaleString('en-GB', { timeZone: 'UTC' })
+			new Date(price[0]).toDateString()
 		);
 		datasets[0].data.push(price[1]);
 	});
