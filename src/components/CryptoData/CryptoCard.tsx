@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import styles from './CryptoCard.module.scss';
 import Bitcoin from '../../assets/images/bitcoin-btc-logo.svg';
-import { formatCurrency, formatPercentage } from '@/utils/formatter';
+import { formatCurrency, formatNumber, formatPercentage } from '@/utils/formatter';
 import classNames from 'classnames';
 import { Data } from '@/utils/types';
 
@@ -68,6 +68,16 @@ const CryptoCard = ({ data }: Props) => {
 						{formatPercentage(data.price_change_percentage_7d_in_currency)}
 					</h3>
 					<span>7 days</span>
+				</div>
+			</div>
+			<div className={styles.cryptoNumbers}>
+				<div className={styles.name}>
+					<h3>{formatCurrency(data.market_cap)}</h3>
+					<span>Market cap</span>
+				</div>
+				<div className={styles.name}>
+					<h3>{formatNumber(data.circulating_supply)}</h3>
+					<span>Circulating supply</span>
 				</div>
 			</div>
 		</div>

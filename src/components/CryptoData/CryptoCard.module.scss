@@ -8,6 +8,7 @@
 .itemsContainer {
 	overflow-x: scroll;
 }
+
 .container {
 	border-radius: 10px;
 	min-height: 7rem;
@@ -18,12 +19,13 @@
 	gap: 3rem;
 	cursor: pointer;
 	transition: all 0.1s;
+
 	&:hover {
 		background-color: $darkGray;
 	}
 
 	@media (min-width: 1024px) {
-		gap: 0rem;
+		gap: 1rem;
 	}
 }
 
@@ -80,4 +82,10 @@
 
 .negative {
 	color: $colorTextRed;
+}
+
+.cryptoNumbers {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
 }

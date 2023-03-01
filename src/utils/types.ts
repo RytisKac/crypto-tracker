@@ -8,6 +8,8 @@ export interface Data {
 	price_change_percentage_24h_in_currency: number;
 	price_change_percentage_7d_in_currency: number;
 	price_change_24h: number;
+	circulating_supply: number;
+	market_cap: number;
 }
 
 export interface Exchange {
