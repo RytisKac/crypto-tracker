@@ -20,8 +20,7 @@ const News = ({ data }: Props) => {
 							<NewsCard
 								key={item.id}
 								title={item.title}
-								excerpt={item.slug}
-								date={item.published_at}
+								date={new Date(item.published_at).toUTCString()}
 							/>
 						);
 					})}
