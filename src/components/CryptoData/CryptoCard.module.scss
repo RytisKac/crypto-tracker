@@ -19,12 +19,14 @@
 	gap: 3rem;
 	cursor: pointer;
 	transition: all 0.1s;
+	width: max-content;
 
 	&:hover {
 		background-color: $darkGray;
 	}
 
 	@media (min-width: 1024px) {
+		width: auto;
 		gap: 1rem;
 	}
 }

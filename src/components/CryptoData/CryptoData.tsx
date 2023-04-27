@@ -6,15 +6,16 @@ import styles from './CryptoCard.module.scss';
 
 interface Props {
 	data: Data[];
+	minimal?: boolean;
 }
 
-const CryptoData = ({ data }: Props) => {
+const CryptoData = ({ data, minimal }: Props) => {
 	return (
 		<div className={styles.itemsContainer}>
 			{data.map((item) => {
 				return (
 					<Link href={`/coins/${item.id}`} key={item.id}>
-						<CryptoCard data={item} />
+						<CryptoCard data={item} minimal={minimal} />
 					</Link>
 				);
 			})}

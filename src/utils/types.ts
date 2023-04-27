@@ -10,6 +10,7 @@ export interface Data {
 	price_change_24h: number;
 	circulating_supply: number;
 	market_cap: number;
+	thumb: string;
 }
 
 export interface Exchange {
