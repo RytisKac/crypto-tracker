@@ -23,7 +23,7 @@ const CryptoCard = ({ data, minimal }: Props) => {
 					<div className={styles.cryptoInfo}>
 						<div className={styles.logo}>
 							<Image
-								src={data.thumb}
+								src={data.large}
 								width={30}
 								height={30}
 								alt={`${data.name} logo`}
